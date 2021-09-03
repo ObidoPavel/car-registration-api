@@ -13,3 +13,7 @@ npm install
 then 
 
 node.exe .\index.js
+
+To run unit tests please use
+
+npm test

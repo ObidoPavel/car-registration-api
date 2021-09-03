@@ -26,6 +26,9 @@ async function getInfoByVin(vin) {
     return { message : 'No VIN is present in request' };
   }
   const rawInfo = await nhtsa.getRawDataByVin(vin);
+  if (!rawInfo) {
+    return { message : 'No info is present for this VIN' };
+  }
   const year = rawInfo.find(info => info.Variable === "Model Year").Value;
   const make = rawInfo.find(info => info.Variable === "Make").Value;
   const model = rawInfo.find(info => info.Variable === "Model").Value;

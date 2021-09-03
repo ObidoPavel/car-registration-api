@@ -1,7 +1,7 @@
 const env = process.env;
 const express = require('express');
 const app = express();
-const port = env.SERVICE_PORT || 3000;
+const port = process.env.PORT || 3000;
 const server = env.SERVICE_SERVER || 'http://localhost'
 const carRegistrationRouter = require('./routes/carRegistration');
 
